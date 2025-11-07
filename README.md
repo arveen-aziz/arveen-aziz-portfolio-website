@@ -76,7 +76,7 @@ To view the site locally:
 
 Clone this repository:
 
-git clone https://github.com/your-github-username/arveen-portfolio.git
+git clone https://github.com/arveen-aziz/arveen-portfolio.git
 
 
 Open the project folder in your editor.
@@ -84,7 +84,7 @@ Open the project folder in your editor.
 Launch index.html in your browser.
 
 🚀 Live Demo
-Live Site: https://your-github-username.github.io/arveen-portfolio
+Live Site: https://arveen-aziz/arveen-portfolio
 
 ✉️ Contact
 
