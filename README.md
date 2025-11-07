@@ -84,7 +84,7 @@ Open the project folder in your editor.
 Launch index.html in your browser.
 
 🚀 Live Demo
-Live Site: https://arveen-aziz/arveen-aziz-portfolio-website
+Live Site: https://arveen-aziz.github.io/arveen-aziz-portfolio-website/
 
 ✉️ Contact
 
