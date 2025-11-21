@@ -165,7 +165,6 @@ body {
   padding: 135px 0;
   background: var(--primary-bg);
   color: var(--text-on-primary);
-  border-bottom: 3px solid rgb(0, 0, 0);
   outline-width: 5px;
   width: 100%;
 }
@@ -417,4 +416,360 @@ a[aria-label="Linked In Profile"]:focus .linkedin-icon {
   transform: scale(1.08);
   outline: none;
 }
+
+/* ---------------- Alternate color scheme (reusable) ---------------- */
+.alt-scheme .site-header {
+  background: var(--primary-bg) !important;
+  color: var(--text-on-primary) !important;
+  border-bottom: black 3px solid;
+  box-shadow: 0 2px 6px rgba(10, 15, 25, 0.04);
+}
+
+.alt-scheme .site-header .brand,
+.alt-scheme .site-header .main-nav a {
+  color: var(--text-on-primary) !important;
+}
+
+.alt-scheme .site-header .brand-mark {
+  background: var(--text-on-primary) !important;
+  border: 2px solid rgba(0,0,0,0.16) !important;
+}
+
+.alt-scheme .main-nav a:hover,
+.alt-scheme .main-nav a:focus {
+  background: rgba(255,255,255,0.08);
+  transform: none;
+}
+
+
+.alt-scheme .hero {
+  background: #ffffff;
+  color: var(--text-main);
+  grid-template-columns: 360px 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.alt-scheme .hero .container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 120px 28px;
+  box-sizing: border-box;
+}
+
+.alt-scheme .hero.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 120px 28px;
+  box-sizing: border-box;
+}
+
+.alt-scheme .hero-left,
+.alt-scheme .hero-right {
+  display: flex;
+  align-items: center;
+}
+
+.alt-scheme .hero-left {
+  justify-content: center;
+  padding-left: 72px; 
+}
+
+.alt-scheme .hero-right {
+  padding-right: 72px; 
+}
+
+
+.alt-scheme .hero-right {
+  transform: none !important;
+}
+
+
+.alt-scheme .hero-left {
+  align-items: center !important;
+}
+
+.alt-scheme .about-card {
+  background: transparent;
+  color: var(--text-main);
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+}
+
+
+.alt-scheme .hero-left .headshot {
+  width: 360px;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10%; 
+  border: 6px solid rgba(10,10,10,0.85);
+  box-shadow: 0 18px 40px rgba(10,12,14,0.25);
+  background: #ffffff;
+}
+
+.alt-scheme .skills-section {
+  background: var(--primary-bg);
+  color: var(--text-on-primary);
+  padding: 84px 0;
+}
+
+.alt-scheme .skills-section .skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 24px;
+  align-items: start;
+}
+
+.alt-scheme .skills-section .skills-panel {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+.alt-scheme .skills-card {
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.alt-scheme .skills-section{
+  border-top: black 3px solid;
+}
+
+.alt-scheme .skills-section .skills-panel .skills-card {
+  background: #ffffff;
+  color: var(--text-main);
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(15,23,32,0.12);
+  max-width: 840px;
+  margin: 0 auto;
+  border: rgba(0, 0, 0, 0.322) 2px solid;
+  transform: translateY(-30px);
+}
+
+.alt-scheme .skills-card .skills {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.alt-scheme .skills-card th,
+.alt-scheme .skills-card td {
+  border: 2px solid rgba(0,0,0,0.08);
+  padding: 6px 8px;
+  font-size: 0.85rem;
+  line-height: 1.3;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.about-card{
+  font-size: 1rem; 
+}
+
+
+.alt-scheme .about-card h2 {
+  font-size: 32px; 
+  margin: 0 0 18px;
+  line-height: 1.05;
+}
+
+.alt-scheme .about-card .about-body {
+  font-size: 1rem; 
+  line-height: 1.6;
+  color: var(--text-main);
+}
+
+.alt-scheme .skills-card thead th {
+  background: var(--primary-bg);
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  padding: 8px 10px;
+}
+
+.alt-scheme .skills-card tbody tr {
+  height: 34px;
+}
+
+.about-page.alt-scheme .hero-right {
+  transform: translate(100px, 35px) !important;
+}
+
+.alt-scheme .site-footer {
+  background: var(--primary-bg) !important;
+  color: var(--text-on-primary) !important;
+  box-shadow: 0 2px 6px rgba(10, 15, 25, 0.04);
+}
+
+
+.alt-scheme .site-footer .footer-nav a,
+.alt-scheme .site-footer .copyright,
+.alt-scheme .site-footer .footer-inner a,
+.alt-scheme .site-footer .footer-inner p {
+  color: var(--text-on-primary) !important;
+}
+
+#skills-header{
+  color: var(--text-on-primary);
+  font-size: 34px;
+  transform: translateY(-40px);
+}
+
+/* ---------------- Experience page styles (scoped to .experience-page) ---------------- */
+.experience-page main{
+  background-color: var(--primary-bg);
+  --exp-card-padding: 14px;    
+  --exp-head-height: 115px;    
+  --exp-header-gap: 12px;      
+  --exp-body-padding: 12px;    
+}
+.experience-page .experience-section {
+  padding: 48px 0 80px;
+}
+.experience-page .experience-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+.experience-title{
+  color: var(--text-on-primary)
+}
+.experience-page .experience-title {
+  font-size: 59px;
+  margin: 0;
+  padding: 6px 45px;
+  display: inline-block;
+}
+.experience-page .experience-cta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.experience-page .experience-arrow {
+  font-size: 65px;
+  color: var(--text-on-primary);
+}
+.experience-page .resume-button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 700;
+  background-color: white;
+  color: black;
+  border: 2px solid rgba(0,0,0,0.12);
+  margin-right: 80px;
+}
+.experience-page .experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: 28px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  align-items: start; 
+  align-content: start;
+}
+.experience-page .exp-card {
+  background: #fff;
+  border: 2px solid rgba(0,0,0,0.12);
+  border-radius: 18px;
+  padding: var(--exp-card-padding);
+  height: 320px;
+  box-shadow: 0 8px 20px rgba(15,23,32,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: var(--exp-header-gap);
+  align-self: start;
+  position: relative; 
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  transform-origin: center top;
+}
+.experience-page .exp-card:hover,
+.experience-page .exp-card:focus-within {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 36px rgba(15,23,32,0.12);
+  border-color: rgba(0,0,0,0.18);
+}
+.experience-page .exp-card-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  gap: 6px;
+  height: var(--exp-head-height); 
+  padding: 12px; 
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.experience-page .exp-card-title{
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--text-main);
+}
+.experience-page .exp-card-company{
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--text-main);
+}
+.experience-page .exp-card-role{
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-main);
+  margin-top: 6px;
+}
+.experience-page .exp-card-company,
+.experience-page .exp-card-title,
+.experience-page .exp-card-role {
+  margin: 0; 
+  line-height: 1.12; 
+}
+.experience-page .exp-card-body {
+  color: var(--text-muted);
+  flex: 1 1 auto;
+  padding: var(--exp-body-padding);
+  overflow: auto;
+}
+.experience-page .exp-card-body ul {
+  margin: 0;
+  padding-left: 20px;
+}
+.experience-page .exp-card-body::-webkit-scrollbar { width: 10px; }
+.experience-page .exp-card-body::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.08); border-radius: 8px; }
+
+.dash-connector {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;              
+  margin-left: -10px;     
+  margin-right: 12px;    
+}
+
+.dash {
+  opacity: 0;
+  transform: scale(0.6);
+  color: white;
+  font-weight: 700;
+  font-size: 60px;
+  animation: dashAppear 9s linear infinite;
+}
+
+@keyframes dashAppear {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  10%, 60% { opacity: 1; transform: scale(1); }
+}
+.dash:nth-child(1) { animation-delay: 0s; }
+.dash:nth-child(2) { animation-delay: 1s; }
+.dash:nth-child(3) { animation-delay: 2s; }
+.dash:nth-child(4) { animation-delay: 3s; }
+.dash:nth-child(5) { animation-delay: 4s; }
+.dash:nth-child(6) { animation-delay: 5s; }
+.dash:nth-child(7) { animation-delay: 6s; }
+.dash:nth-child(8) { animation-delay: 7s; }
+.dash:nth-child(9) { animation-delay: 8s; }
+.dash:nth-child(10) { animation-delay: 9s; }
+
 
