@@ -267,7 +267,7 @@ body {
   display: block;
 }
 
-/* ---------------- Features Section ---------------- */
+/* ---------------- Portfolio Section ---------------- */
 .features.container {
   max-width: 100%;
   width: 100%;
@@ -288,12 +288,18 @@ body {
 }
 
 .features-title {
-  font-size: 32px;
+  font-size: 59px;
   text-align: center;
   margin: 0 0 20px;
   font-weight: 800;
   color: var(--text-main);
   padding-top: 40px;
+}
+
+
+#features-header {
+  font-size: 32px;
+  line-height: 1.15;
 }
 
 .features-intro {
@@ -314,10 +320,21 @@ body {
   padding-bottom: 96px;
 }
 
+.portfolio-section.container > .features-grid,
+.portfolio-section > .features-grid {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 48px;
+  padding-right: 48px;
+  box-sizing: border-box;
+  gap: 32px; 
+}
+
 .feature-card {
   background: #6688cc;
   border-radius: 12px;
-  padding: 28px;
+  padding: 18px; 
   box-shadow: 0 6px 20px rgba(15, 23, 32, 0.06);
   border: 1px solid rgba(15, 23, 32, 0.06);
   display: flex;
@@ -325,8 +342,14 @@ body {
   align-items: center;
   text-align: center;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  min-height: 300px;
-  outline: 3px solid black;
+  min-height: 220px; 
+}
+
+/* Remove link underlines inside feature cards (titles and images) */
+.portfolio-section .feature-card,
+.portfolio-section .feature-card .feature-name,
+.portfolio-section .feature-card a {
+  text-decoration: none;
 }
 
 .feature-card:hover,
@@ -359,6 +382,172 @@ body {
   color: #ffffff;
   line-height: 1.6;
   font-size: 0.98rem;
+}
+
+/* Portfolio-specific card image and title styling to match the mock */
+.portfolio-section .feature-card figure {
+  width: 100%;
+  margin: 0 0 10px 0;
+}
+.portfolio-section .feature-card figure img {
+  width: 100%;
+  height: 160px; 
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.portfolio-section .feature-name {
+  margin: 0;
+  margin-top: 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 6px;
+}
+.portfolio-section .feature-name::before {
+  content: "";
+  display: block;
+  width: 86px;
+  height: 3px;
+  background: rgba(0,0,0,0.12);
+  margin: 0 auto 8px;
+  border-radius: 2px;
+}
+
+.project-modal {
+  display: none; 
+  position: fixed;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+}
+.project-modal:target {
+  display: flex;
+}
+.project-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.86);
+  pointer-events: none; 
+}
+.project-modal__overlay {
+  pointer-events: none; 
+}
+.project-modal__dialog {
+  position: relative;
+  max-width: 820px;
+  width: calc(100% - 56px);
+  margin: 40px 24px;
+  background: var(--primary-bg);
+  color: var(--text-on-primary);
+  border-radius: 14px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  padding: 28px;
+  z-index: 1210;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 20px;
+  gap: 18px;
+  max-height: calc(100vh - 120px);
+  overflow: auto;
+}
+.project-modal__media figure img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.project-modal__media,
+.project-modal__title,
+.project-modal__subtitle,
+.project-modal__desc {
+  grid-column: 1 / -1;
+}
+.project-modal__actions {
+  grid-column: 1 / 2;
+  justify-self: end;
+  align-self: center;
+  transform: translateX(-90px); 
+}
+.project-modal__close {
+  grid-column: 2 / 3;
+  justify-self: end;
+  align-self: center;
+  background: rgba(255,255,255,0.06);
+  color: var(--text-on-primary);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 700;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.project-modal__close:hover,
+.project-modal__close:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.32);
+  outline: none;
+}
+.project-modal__title {
+  font-size: 36px;
+  margin: 6px 0 0;
+  font-weight: 800;
+  text-align: center;
+}
+.project-modal__title,
+.project-modal__subtitle {
+  text-decoration: none;
+}
+.project-modal__subtitle {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  opacity: 0.95;
+}
+.project-modal__desc {
+  background: rgba(255,255,255,0.04);
+  padding: 18px;
+  border-radius: 12px;
+  min-height: 120px;
+  overflow: auto;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.project-modal__actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6px;
+}
+.project-modal__actions .button-outline {
+  background: transparent;
+  color: var(--text-on-primary);
+  border-color: rgba(255,255,255,0.18);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.project-modal__actions .button-outline:hover,
+.project-modal__actions .button-outline:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.36);
+  outline: none;
+}
+.project-modal__actions .modal-or {
+  color: rgba(255,255,255,0.7);
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .project-modal__dialog { padding: 18px; grid-template-columns: 1fr; }
+  .project-modal__media figure img { height: 200px; }
+  .project-modal__title { font-size: 28px; }
+  .project-modal__close { grid-column: 1 / -1; justify-self: end; }
 }
 
 /* ---------------- Footer ---------------- */
@@ -436,12 +625,12 @@ a[aria-label="Linked In Profile"]:focus .linkedin-icon {
 }
 
 .alt-scheme .main-nav a:hover,
-.alt-scheme .main-nav a:focus {
-  background: rgba(255,255,255,0.08);
-  transform: none;
-}
-
-
+ .project-modal__close {
+   position: static;
+   right: auto;
+   bottom: auto;
+   z-index: auto;
+ }
 .alt-scheme .hero {
   background: #ffffff;
   color: var(--text-main);
@@ -771,5 +960,218 @@ a[aria-label="Linked In Profile"]:focus .linkedin-icon {
 .dash:nth-child(8) { animation-delay: 7s; }
 .dash:nth-child(9) { animation-delay: 8s; }
 .dash:nth-child(10) { animation-delay: 9s; }
+
+/* ---------------- Contact page styles ---------------- */
+.contact-page {
+  background: var(--primary-bg);
+  color: var(--text-on-primary);
+}
+
+.contact-hero {
+  max-width: var(--max-width);
+  margin: 48px auto;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr 440px;
+  gap: 48px;
+  align-items: start;
+}
+
+
+.contact-page main {
+  background: var(--primary-bg);
+  padding-bottom: 72px;
+}
+
+.contact-page .contact-hero {
+  background: transparent;
+  z-index: 1;
+}
+
+
+.contact-page .contact-photo,
+.contact-page .contact-card {
+  margin-top: 12px;
+}
+
+.contact-card .contact-email {
+  margin-top: 12px;
+  text-align: center;
+  font-weight: 600;
+}
+.contact-card .contact-email a {
+  color: var(--button-bg);
+  background: rgba(15,29,92,0.06);
+  padding: 6px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.contact-card .contact-email a:hover,
+.contact-card .contact-email a:focus {
+  background: rgba(15,29,92,0.12);
+  outline: none;
+}
+
+
+.contact-email-form {
+  display: inline-block;
+}
+.contact-email-form .email-submit {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--button-bg);
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.contact-email-form .email-submit:hover,
+.contact-email-form .email-submit:focus {
+  background: rgba(15,29,92,0.06);
+  border-radius: 6px;
+  outline: none;
+}
+
+.contact-photo {
+  background: linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0.02));
+  border: 2px solid rgba(0,0,0,0.06);
+  border-radius: 6px;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.contact-card {
+  background: #ffffff;
+  color: var(--text-main);
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: 0 18px 60px rgba(15,23,32,0.12);
+  border: 2px solid rgba(0,0,0,0.06);
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.contact-row input,
+.contact-card input,
+.contact-card textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.12);
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.contact-subject {
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  margin: 10px 0 12px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(240,240,240,0.9);
+}
+
+.contact-subject-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.12);
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background: #fff;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+}
+
+.contact-card textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.contact-submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.contact-submit .button-outline {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border-color: var(--button-bg);
+}
+
+/* ---------------- Page entrance animations ---------------- */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes slideUpFade {
+    0% { transform: translateY(18px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes popIn {
+    0% { transform: scale(0.98); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  .site-header,
+  main,
+  .site-footer {
+    will-change: transform, opacity;
+    animation-name: slideUpFade;
+    animation-duration: 420ms;
+    animation-timing-function: cubic-bezier(.2,.8,.2,1);
+    animation-fill-mode: both;
+  }
+  .site-header { animation-delay: 0s; }
+  main { animation-delay: 0.06s; }
+  .site-footer { animation-delay: 0.12s; }
+
+  
+  main > * {
+    animation-name: popIn;
+    animation-duration: 380ms;
+    animation-timing-function: cubic-bezier(.2,.9,.3,1);
+    animation-fill-mode: both;
+    animation-delay: 0.08s;
+  }
+
+  
+  .hero .container,
+  .features-grid .feature-card,
+  .experience-grid .exp-card {
+    animation-delay: 0.12s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header,
+  main,
+  .site-footer,
+  main > *,
+  .hero .container,
+  .features-grid .feature-card,
+  .experience-grid .exp-card {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
 
 
